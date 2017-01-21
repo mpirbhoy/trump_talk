@@ -1,4 +1,4 @@
-var socket = io("http://localhost:8080");
+var socket = io(window.location.hostname + ":8080");
 var INITIAL_MESSAGE = "Let's Make America Great Again!";
 
 var $messages = $('.messages-content'),
