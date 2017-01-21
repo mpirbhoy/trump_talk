@@ -13,7 +13,7 @@ module.exports = function(app) {
 	//Using socket.io
 	var server = require('http').createServer(app);
 	var io = require('socket.io').listen(server);
-  server.listen(8080, "127.0.0.1");
+  server.listen(8080, (process.env.URL || '127.0.0.1'));
 
 	io.on('connection', function(socket){
 
