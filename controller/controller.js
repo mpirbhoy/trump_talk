@@ -24,7 +24,7 @@ module.exports.getResponse = function(receivedMsg, callback) {
 }
 
 function randomizer(responses) {
-  if (responses !=== "undefined") {
+  if (responses) {
     var len = responses.length;
     var i = Math.round(Math.random() * (len - 1)); 
     return responses[i];  
