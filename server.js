@@ -4,8 +4,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 
 //Connecting to mongoose
-var dbpath = process.env.MONGODB_URI || 'mongodb://localhost/trumptalk';
-mongoose.connect(dbpath);
+//var dbpath = process.env.MONGODB_URI || 'mongodb://localhost/trumptalk';
+//mongoose.connect(dbpath);
 
 //Serving static files in public directory
 var app = express();
