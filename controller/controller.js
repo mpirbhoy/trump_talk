@@ -15,12 +15,20 @@ module.exports.getResponse = function(receivedMsg, callback) {
     for (var ii in words) {
       for (var k_i in templates[i].keys) {
         if (templates[i].keys[k_i] == words[ii]) {
-          callback(templates[i].response);
+          callback(randomizer(templates[i].response));
           return;
         }
       }
     }
   }
 
-  callback(templates[0].response);
+  callback(randomizer(templates[0].response));
+}
+
+function randomizer(responses) {
+  var len = responses.length;
+  var i = Math.round(Math.random() * (len - 1));
+  return responses[i];
+
+
 }
