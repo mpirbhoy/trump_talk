@@ -1,8 +1,13 @@
 [
-
 {
-	"keys":["women", "girls", "female", "sexual"],
-	"response": ["Number one, I have great respect for women. I was the one that really broke the glass ceiling on behalf of women, more than anybody in the construction industry."]
+	"keys": ["default"],
+	"response": ["Bing bing, bong bong, bing bing bing.", 
+		"You know, it doesn’t really matter as long as you've got a young and beautiful piece of ass."]
+}
+{
+	"keys":["women", "girls", "female", "sexual", "woman", "girl"],
+	"response": ["Number one, I have great respect for women. I was the one that really broke the glass ceiling on behalf of women, more than anybody in the construction industry.", 
+		"I cherish women. I want to help women. I’m going to be able to do things for women that no other candidate would be able to do..."]
 },
 
 {
@@ -12,18 +17,79 @@
 
 { 
 	"keys": ["barack", "obama"],
-	"response": ["By the way, An ‘extremely credible source’ has called my office and told me that Barack Obama’s birth certificate is a fraud"]
-},
-
-{
-	"keys": ["wall"],
-	"response": ["I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words.", 
+	"response": ["By the way, An ‘extremely credible source’ has called my office and told me that Barack Obama’s birth certificate is a fraud", 
 		"Our great African-American President hasn’t exactly had a positive impact on the thugs who are so happily and openly destroying Baltimore."]
 },
 
 {
-	"keys": 
+	"keys": ["wall"],
+	"response": ["I will build a great wall – and nobody builds walls better than me, believe me – and I’ll build them very inexpensively. I will build a great, great wall on our southern border, and I will make Mexico pay for that wall. Mark my words."]
+},
 
+{
+	"keys": ["rich", "poor"],
+	"response": ["The beauty of me is that I’m very rich.", 
+		"Part of the beauty of me is that I am very rich."]
+},
+
+{
+	"keys": ["global warming", "weather", "climate change", "snowing"],
+	"response": ["It’s freezing and snowing in New York – we need global warming!"]
+},
+
+{
+	"keys": ["ivanka", "daughter"],
+	"response": ["I’ve said if Ivanka weren’t my daughter, perhaps I’d be dating her."]
+},
+
+{
+	"keys": ["finger", "fingers"],
+	"response": ["My fingers are long and beautiful, as, it has been well documented, are various other parts of my body."]
+},
+
+{
+	"keys": ["coke"],
+	"response": ["I have never seen a thin person drinking Diet Coke."]
+},
+
+{
+	"keys": ["disgusting", "gross"],
+	"response": ["You’re disgusting."]
+},
+
+{
+	"keys": ["greedy", "greed"],
+	"response": ["The point is, you can never be too greedy."]
+},
+{
+	"keys": ["iq", "smart", "stupid"],
+	"response": ["My IQ is one of the highest — and you all know it! Please don’t feel so stupid or insecure; it’s not your fault."]
+},
+{
+	"keys": ["gay", "homosexual"],
+	"response": ["I have so many fabulous friends who happen to be gay, but I am a traditionalist"]
+},
+{
+	"keys": ["hand", "hands"],
+	"response": ["Look at those hands, are they small hands?"]
+},
+{
+	"keys": ["nice"],
+	"response": ["Thanks sweetie. That’s nice."]
+},
+{
+	"keys": ["media"],
+	"response": ["You know, it really doesn’t matter what the media write as long as you’ve got a young, and beautiful, piece of ass.", 
+		"The concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive."]
+},
+{
+	"keys": ["black"],
+	"response": ["I have a great relationship with the blacks. I’ve always had a great relationship with the blacks."]
+
+},
+{
+	"keys": ["hair"],
+	"response": ["As everybody knows, but the haters & losers refuse to acknowledge, I do not wear a “wig.” My hair may not be perfect but it’s mine."]
 }
 
 ]
