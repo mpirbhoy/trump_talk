@@ -69,17 +69,20 @@ Chat Title
   text-align: left;
   padding: 10px 10px 10px 50px;
 }
+
 .chat-title h1, .chat-title h2 {
   font-weight: normal;
   font-size: 10px;
   margin: 0;
   padding: 0;
 }
+
 .chat-title h2 {
   color: rgba(255, 255, 255, 0.5);
   font-size: 8px;
   letter-spacing: 1px;
 }
+
 .chat-title .avatar {
   position: absolute;
   z-index: 1;
@@ -93,6 +96,7 @@ Chat Title
   padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.24);
 }
+
 .chat-title .avatar img {
   width: 100%;
   height: auto;
@@ -108,6 +112,7 @@ Messages
   position: relative;
   width: 100%;
 }
+
 .messages .messages-content {
   position: absolute;
   top: 0;
@@ -115,6 +120,7 @@ Messages
   height: 101%;
   width: 100%;
 }
+
 .messages .message {
   clear: both;
   float: left;
@@ -128,12 +134,14 @@ Messages
   position: relative;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
+
 .messages .message .timestamp {
   position: absolute;
   bottom: -15px;
   font-size: 9px;
   color: rgba(255, 255, 255, 0.3);
 }
+
 .messages .message::before {
   content: '';
   position: absolute;
@@ -142,6 +150,7 @@ Messages
   left: 0;
   border-right: 7px solid transparent;
 }
+
 .messages .message .avatar {
   position: absolute;
   z-index: 1;
@@ -155,10 +164,12 @@ Messages
   padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.24);
 }
+
 .messages .message .avatar img {
   width: 100%;
   height: auto;
 }
+
 .messages .message.message-personal {
   float: right;
   color: #fff;
@@ -166,6 +177,7 @@ Messages
   background: linear-gradient(120deg, #248A52, #257287);
   border-radius: 10px 10px 0 10px;
 }
+
 .messages .message.message-personal::before {
   left: auto;
   right: 0;
@@ -174,14 +186,17 @@ Messages
   border-top: 4px solid #257287;
   bottom: -4px;
 }
+
 .messages .message:last-child {
   margin-bottom: 30px;
 }
+
 .messages .message.new {
   transform: scale(0);
   transform-origin: 0 0;
   animation: bounce 500ms linear both;
 }
+
 .messages .message.loading::before {
   position: absolute;
   top: 50%;
@@ -199,6 +214,7 @@ Messages
   border: none;
   animation-delay: .15s;
 }
+
 .messages .message.loading span {
   display: block;
   font-size: 0;
@@ -206,6 +222,7 @@ Messages
   height: 10px;
   position: relative;
 }
+
 .messages .message.loading span::before {
   position: absolute;
   top: 50%;
@@ -222,6 +239,7 @@ Messages
   animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
   margin-left: -7px;
 }
+
 .messages .message.loading span::after {
   position: absolute;
   top: 50%;
@@ -250,6 +268,7 @@ Message Box
   padding: 10px;
   position: relative;
 }
+
 .message-box .message-input {
   background: none;
   border: none;
@@ -262,9 +281,11 @@ Message Box
   padding-right: 20px;
   width: 265px;
 }
+
 .message-box textarea:focus:-webkit-placeholder {
   color: transparent;
 }
+
 .message-box .message-submit {
   position: absolute;
   z-index: 1;
@@ -281,6 +302,7 @@ Message Box
   outline: none !important;
   transition: background .2s ease;
 }
+
 .message-box .message-submit:hover {
   background: #1D7745;
 }
@@ -309,47 +331,61 @@ Bounce
   0% {
     transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   4.7% {
     transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   9.41% {
     transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   14.11% {
     transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   18.72% {
     transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   24.32% {
     transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   29.93% {
     transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   35.54% {
     transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   41.04% {
     transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   52.15% {
     transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   63.26% {
     transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   85.49% {
     transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
+
 @keyframes ball {
   from {
     transform: translateY(0) scaleY(0.8);
   }
+
   to {
     transform: translateY(-10px);
   }
