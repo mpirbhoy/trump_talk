@@ -1,4 +1,5 @@
 var socket = io("http://localhost:8080");
+var INITIAL_MESSAGE = "Let's Make America Great Again!";
 
 var $messages = $('.messages-content'),
     d, h, m,
@@ -7,7 +8,11 @@ var $messages = $('.messages-content'),
 $(window).load(function() {
   $messages.mCustomScrollbar();
   setTimeout(function() {
-    fakeMessage();
+    updateScrollbar();
+    $('.message.loading').remove();
+    $('<div class="message new"><figure class="avatar"><img src="./trump2.jpg" /></figure>' + INITIAL_MESSAGE + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    setDate();
+    updateScrollbar();
   }, 100);
 });
 
@@ -36,19 +41,11 @@ function insertMessage() {
   $('.message-input').val(null);
   updateScrollbar();
   console.log('MESSAGE ENTERED', msg);
+  console.log(socket);
   socket.emit('chat message', msg);
-  fakeMessage();
-  // setTimeout(function() {
-  //   fakeMessage();
-  // }, 1000 + (Math.random() * 20) * 100);
+  loadingMessage();
 }
 
-socket.on('trump response', function(msg) {
-  $('.message.loading').remove();
-  $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-  setDate();
-  updateScrollbar();
-})
 
 $('.message-submit').click(function() {
   insertMessage();
@@ -61,43 +58,19 @@ $(window).on('keydown', function(e) {
   }
 })
 
-var Fake = [
-  'We are going to make America Great Again!',
-  'Nice to meet you',
-  'How are you?',
-  'Not too bad, thanks',
-  'What do you do?',
-  'That\'s awesome',
-  'Codepen is a nice place to stay',
-  'I think you\'re a nice person',
-  'Why do you think that?',
-  'Can you explain?',
-  'Anyway I\'ve gotta go now',
-  'It was a pleasure chat with you',
-  'Time to make a new codepen',
-  'Bye',
-  ':)'
-]
-
-function fakeMessage() {
+function loadingMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
   $('<div class="message loading new"><figure class="avatar"><img src="./trump2.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
-
-  // setTimeout(function() {
-  //   $('.message.loading').remove();
-  //   $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-  //   setDate();
-  //   updateScrollbar();
-  //   i++;
-  // }, 1000 + (Math.random() * 20) * 100);
-  $('.message.loading').remove();
-  $('<div class="message new"><figure class="avatar"><img src="./trump2.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-  setDate();
-  updateScrollbar();
-  i++;
-
 }
 
+socket.on('trump response', function(msg) {
+  updateScrollbar();
+  console.log('response msg >>> ', msg);
+  $('.message.loading').remove();
+  $('<div class="message new"><figure class="avatar"><img src="./trump2.jpg" /></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  setDate();
+  updateScrollbar();
+})

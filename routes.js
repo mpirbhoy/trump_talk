@@ -17,7 +17,7 @@ module.exports = function(app) {
 
 	io.on('connection', function(socket){
     console.log('a user has connected');
-		io.on('chat message', function (receivedMsg) {
+		socket.on('chat message', function (receivedMsg) {
 			console.log(receivedMsg);
 		    socket.emit('trump response', { trumpMsg: receivedMsg });
 		  // socket.on('my other event', function (data) {
