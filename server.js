@@ -1,5 +1,4 @@
 var express = require('express');
-var expressSession = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
@@ -15,8 +14,6 @@ var port = process.env.PORT || 3000; //port on Heroku
 app.set('port',port);
 
 //Setting Configurations
-app.set('views', './views');
-app.set('view engine', 'ejs');
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: true
