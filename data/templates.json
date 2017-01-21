@@ -2,14 +2,18 @@
 {
 	"keys": ["default"],
 	"response": ["Bing bing, bong bong, bing bing bing.", 
-		"You know, it doesn’t really matter as long as you've got a young and beautiful piece of ass."]
+		"You know, it doesn’t really matter as long as you've got a young and beautiful piece of ass.",
+    "Thanks sweetie. That’s nice"]
 },
 {
 	"keys":["women", "girls", "female", "sexual", "woman", "girl"],
-	"response": ["Number one, I have great respect for women. I was the one that really broke the glass ceiling on behalf of women, more than anybody in the construction industry.", 
-		"I cherish women. I want to help women. I’m going to be able to do things for women that no other candidate would be able to do..."]
+	"response": [
+    "Number one, I have great respect for women. I was the one that really broke the glass ceiling on behalf of women, more than anybody in the construction industry.", 
+		"I cherish women. I want to help women. I’m going to be able to do things for women that no other candidate would be able to do...",
+    "All of the women on The Apprentice flirted with me – consciously or unconsciously. That’s to be expected.",
+    "Number one, I have great respect for women. I was the one that really broke the glass ceiling on behalf of women, more than anybody in the construction industry."
+  ]
 },
-
 {
 	"keys": ["happy new year"],
 	"response": ["Happy New Year to all, including to my many enemies and those who have fought me and lost so badly they just don’t know what to do. Love!"]
@@ -79,8 +83,14 @@
 },
 {
 	"keys": ["media"],
-	"response": ["You know, it really doesn’t matter what the media write as long as you’ve got a young, and beautiful, piece of ass.", 
-		"The concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive."]
+	"response": ["You know, it really doesn’t matter what the media write as long as you’ve got a young, and beautiful, piece of ass."]
+},
+{
+  "keys": ["global warming"],
+  "response": [
+    "The concept of global warming was created by and for the Chinese in order to make U.S. manufacturing non-competitive.",
+    "It’s freezing and snowing in New York – we need global warming!"
+  ]
 },
 {
 	"keys": ["black"],
@@ -90,6 +100,10 @@
 {
 	"keys": ["hair"],
 	"response": ["As everybody knows, but the haters & losers refuse to acknowledge, I do not wear a “wig.” My hair may not be perfect but it’s mine."]
+},
+{
+  "keys": ["election"],
+  "response": ["I’m just thinking to myself right now, we should just cancel the election and just give it to Trump, right?"]
 }
 
 ]
