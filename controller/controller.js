@@ -24,7 +24,12 @@ module.exports.getResponse = function(receivedMsg, callback) {
 }
 
 function randomizer(responses) {
-  var len = responses.length;
-  var i = Math.round(Math.random() * (len - 1));
-  return responses[i];
+  if (responses !=== "undefined") {
+    var len = responses.length;
+    var i = Math.round(Math.random() * (len - 1)); 
+    return responses[i];  
+  } else {
+    return randomizer(templates[0].image);
+  }
+  
 }
