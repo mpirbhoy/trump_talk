@@ -10,7 +10,7 @@ $(window).load(function() {
   setTimeout(function() {
     updateScrollbar();
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="/photos/trump.jpg" /></figure>' + INITIAL_MESSAGE + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src="/photos/angry2.jpg" /></figure>' + INITIAL_MESSAGE + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
   }, 100);
@@ -43,7 +43,7 @@ function insertMessage() {
   console.log('MESSAGE ENTERED', msg);
   console.log(socket);
   socket.emit('chat message', msg);
-  loadingMessage();
+  // loadingMessage();
 }
 
 
@@ -62,7 +62,7 @@ function loadingMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="/photos/trump2.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="/photos/trump.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 }
 
@@ -70,7 +70,8 @@ socket.on('trump response', function(msg) {
   updateScrollbar();
   console.log('response msg >>> ', msg);
   $('.message.loading').remove();
-  $('<div class="message new"><figure class="avatar"><img src="/photos/trump.jpg" /></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  $('#main-img').attr('src', '/photos/' + msg.image + '.jpg');
+  $('<div class="message new"><figure class="avatar"><img src="/photos/' + msg.image + '.jpg"' +  '/></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
   setDate();
   updateScrollbar();
 })
