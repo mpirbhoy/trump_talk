@@ -37,15 +37,16 @@ function insertMessage() {
   updateScrollbar();
   console.log('MESSAGE ENTERED', msg);
   socket.emit('chat message', msg);
-  fakeMessage();
+  // fakeMessage();
   // setTimeout(function() {
   //   fakeMessage();
   // }, 1000 + (Math.random() * 20) * 100);
 }
 
 socket.on('trump response', function(msg) {
+  console.log('Received response');
   $('.message.loading').remove();
-  $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
   setDate();
   updateScrollbar();
 })
