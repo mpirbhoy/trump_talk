@@ -43,9 +43,9 @@ Chat
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 380px;
   height: 80vh;
-  max-height: 500px;
+  max-height: 800px;
   z-index: 2;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
@@ -66,8 +66,7 @@ Chat Title
   background: rgba(0, 0, 0, 0.2);
   color: #fff;
   text-transform: uppercase;
-  text-align: left;
-  padding: 10px 10px 10px 50px;
+  text-align: center;
 }
 
 .chat-title h1, .chat-title h2 {
@@ -84,17 +83,21 @@ Chat Title
 }
 
 .chat-title .avatar {
-  position: absolute;
   z-index: 1;
-  top: 8px;
-  left: 9px;
-  border-radius: 30px;
-  width: 30px;
-  height: 30px;
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.24);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.chat-title .name {
+  margin-bottom: 10px;
 }
 
 .chat-title .avatar img {
