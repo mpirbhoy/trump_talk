@@ -19,12 +19,7 @@ module.exports = function(app) {
 	    console.log('a user has connected');
 		socket.on('chat message', function (receivedMsg) {
 			console.log(receivedMsg);
-			
-
-		    socket.emit('trump response', { trumpMsg: receivedMsg });
-		  // socket.on('my other event', function (data) {
-		  //   console.log(data);
-		  // });
+		    controller.getResponse(receivedMsg, function (replyMsg) {socket.emit('trump response', { trumpMsg: replyMsg })});
 		});
 	})
 	
