@@ -6,15 +6,17 @@ var express = require('express');
 var controller = require('./controller/controller');
 
 module.exports = function(app) {
-	// var io = require('socket.io')(app);
 
 	//Get request for Home page 
 	app.get('/', controller.getHome);	
 	
 	//Using socket.io
-	var server = require('http').Server(app);
-	var io = require('socket.io')(server);
+	var server = require('http').createServer(app);
+	var io = require('socket.io').listen(server);
+  server.listen(8080, "127.0.0.1");
+
 	io.on('connection', function(socket){
+    console.log('a user has connected');
 		io.on('chat message', function (receivedMsg) {
 			console.log(receivedMsg);
 		    socket.emit('trump response', { trumpMsg: receivedMsg });

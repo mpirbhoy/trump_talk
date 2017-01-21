@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io("http://localhost:8080");
 
 var $messages = $('.messages-content'),
     d, h, m,
@@ -62,7 +62,7 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  'Hi there, I\'m Fabio and you?',
+  'We are going to make America Great Again!',
   'Nice to meet you',
   'How are you?',
   'Not too bad, thanks',
