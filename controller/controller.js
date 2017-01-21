@@ -14,13 +14,13 @@ module.exports.getResponse = function(receivedMsg, callback) {
   for (var i in templates) {
     for (var k_i in templates[i].keys) {
       if (receivedMsg.toLowerCase().includes(templates[i].keys[k_i])) {
-        callback(randomizer(templates[i].response));
+        callback(randomizer(templates[i].response), randomizer(templates[i].image));
         return;
       }
     }
   }
 
-  callback(randomizer(templates[0].response));
+  callback(randomizer(templates[0].response), randomizer(templates[i].image));
 }
 
 function randomizer(responses) {
