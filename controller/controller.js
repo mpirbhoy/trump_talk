@@ -20,7 +20,7 @@ module.exports.getResponse = function(receivedMsg, callback) {
     }
   }
 
-  callback(randomizer(templates[0].response), randomizer(templates[i].image));
+  callback(randomizer(templates[0].response), randomizer(templates[0].image));
 }
 
 function randomizer(responses) {
@@ -29,7 +29,15 @@ function randomizer(responses) {
     var i = Math.round(Math.random() * (len - 1)); 
     return responses[i];  
   } else {
-    return randomizer(templates[0].image);
+    imageArray = [];
+    for (var i in templates) {
+      for (var k_i in templates[i].image) {
+        imageArray.push(templates[i].image[k_i]);
+      }
+    }
+    console.log(imageArray);
+    //Go through all images and randomize that
+    return randomizer(imageArray);
   }
   
 }
