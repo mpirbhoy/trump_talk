@@ -21,4 +21,6 @@ module.exports.getResponse = function(receivedMsg, callback) {
       }
     }
   }
+
+  callback(templates[0].response);
 }
