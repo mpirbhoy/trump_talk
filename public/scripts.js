@@ -42,8 +42,11 @@ function insertMessage() {
   updateScrollbar();
   console.log('MESSAGE ENTERED', msg);
   console.log(socket);
-  socket.emit('chat message', msg);
-  // loadingMessage();
+
+  setTimeout(function() {
+    socket.emit('chat message', msg);
+  }, 1000 + (Math.random() * 10) * 50);
+
 }
 
 
@@ -58,20 +61,25 @@ $(window).on('keydown', function(e) {
   }
 })
 
-function loadingMessage() {
+function loadingMessage(image) {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="/photos/trump.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="/photos/' + image +  '.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 }
 
 socket.on('trump response', function(msg) {
+  loadingMessage(msg.image);
+
   updateScrollbar();
-  console.log('response msg >>> ', msg);
-  $('.message.loading').remove();
-  $('#main-img').attr('src', '/photos/' + msg.image + '.jpg');
-  $('<div class="message new"><figure class="avatar"><img src="/photos/' + msg.image + '.jpg"' +  '/></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-  setDate();
-  updateScrollbar();
+
+  setTimeout(function() {
+      console.log('response msg >>> ', msg);
+      $('.message.loading').remove();
+      $('#main-img').attr('src', '/photos/' + msg.image + '.jpg');
+      $('<div class="message new"><figure class="avatar"><img src="/photos/' + msg.image + '.jpg"' +  '/></figure>' + msg.trumpMsg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+      setDate();
+      updateScrollbar();
+  }, 1000 + (Math.random() * 10) * 50);
 })
