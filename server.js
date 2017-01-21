@@ -19,11 +19,6 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.use(bodyParser.json({limit: '5mb'}));
-app.use(expressSession({
-    secret: 'u of t doesnt rock' ,
-    saveUninitialized: true,
-    resave: true
-}));
 
 //Sets up the routes that the server accepts
 require('./routes.js')(app);
