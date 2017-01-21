@@ -1,0 +1,74 @@
+givar request = require('request');
+var brains = require('./../brains/brain.js');
+
+
+//Fb Chatbot Webhook Get request 
+module.exports.fbWebhook = function (req, res) {
+    if (req.query['hub.verify_token'] === 'mujtaba_verify_fb_uoftcb') {
+        res.send(req.query['hub.challenge']);
+    } else {
+        res.send('Error, wrong validation token');
+    }
+};
+
+module.exports.fbWebhookPost = function (req, res) {
+    messaging_events = req.body.entry[0].messaging;
+    console.log("webhook");
+    for (i = 0; i < messaging_events.length; i++) {
+        event = req.body.entry[0].messaging[i];
+        sender = event.sender.id;
+        if (event.message && event.message.text) {
+          receivedText = event.message.text;
+          // Handle a text message from this sender
+          console.log("Received Text: " + receivedText);  
+          brains.brain(receivedText, function(outputText) {
+            sendTextMessage(sender, outputText.substring(0, 200));            
+          });
+
+          
+        }
+    }
+    res.sendStatus(200);
+};
+
+
+// Sample Get
+module.exports.getExample = function (req, res) {
+    var getID = req.params.getID;
+    res.json({msg: "Working", ID: getID, status: 200});
+};
+
+// Sample Post 
+module.exports.postExample = function (req, res) {
+    var postID = req.params.postID;
+    res.json({msg: "Working", ID: postID, status: 200});
+};
+
+// Sample Delete
+module.exports.deleteExample = function (req, res) {
+    var deleteID = req.params.deleteID;
+    res.json({msg: "Working", ID: deleteID, status: 200});
+};
+
+var token = "EAAINVXXBOyMBAAe5k5TncwHEJwavWNaWHtsOTRi9BeGZB4lYsWOJh8nTZCSusNuABGKwNJ0hgFtx96WrXMdj2prkSkRzqD7tTwZCk0hwy7kplB2fYgIZCdZAbXoWo8sT7ZCHR4CtsxPKCrr8fxXcvkkqgzlOhQd7ytIRhkE6nCsQZDZD";
+
+function sendTextMessage(sender, text) {
+    messageData = {
+      text:text
+        }
+    request({
+    url: 'https://graph.facebook.com/v2.6/me/messages',
+    qs: {access_token:token},
+    method: 'POST',
+    json: {
+      recipient: {id:sender},
+      message: messageData,
+        }
+    }, function(error, response, body) {
+        if (error) {
+          console.log('Error sending message: ', error);
+        } else if (response.body.error) {
+          console.log('Error: ', response.body.error);
+        }
+    });
+}
