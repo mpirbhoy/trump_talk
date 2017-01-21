@@ -14,11 +14,15 @@ module.exports = function(app) {
 	//Using socket.io
 	var server = require('http').Server(app);
 	var io = require('socket.io')(server);
-
-	io.on('chat message', function (receivedMsg) {
-	  socket.emit('trump response', { trumpMsg: receivedMsg });
-	  // socket.on('my other event', function (data) {
-	  //   console.log(data);
-	  // });
-	});
+	io.on('connection', function(socket){
+		io.on('chat message', function (receivedMsg) {
+			console.log(receivedMsg);
+		    socket.emit('trump response', { trumpMsg: receivedMsg });
+		  // socket.on('my other event', function (data) {
+		  //   console.log(data);
+		  // });
+		});
+	})
+	
+	
 }
