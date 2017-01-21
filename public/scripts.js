@@ -1,3 +1,5 @@
+var socket = io();
+
 var $messages = $('.messages-content'),
     d, h, m,
     i = 0;
@@ -33,10 +35,20 @@ function insertMessage() {
   setDate();
   $('.message-input').val(null);
   updateScrollbar();
-  setTimeout(function() {
-    fakeMessage();
-  }, 1000 + (Math.random() * 20) * 100);
+  console.log('MESSAGE ENTERED', msg);
+  socket.emit('chat message', msg);
+  fakeMessage();
+  // setTimeout(function() {
+  //   fakeMessage();
+  // }, 1000 + (Math.random() * 20) * 100);
 }
+
+socket.on('trump response', function(msg) {
+  $('.message.loading').remove();
+  $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  setDate();
+  updateScrollbar();
+})
 
 $('.message-submit').click(function() {
   insertMessage();
@@ -71,15 +83,21 @@ function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="./trump2.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
-  setTimeout(function() {
-    $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
-    setDate();
-    updateScrollbar();
-    i++;
-  }, 1000 + (Math.random() * 20) * 100);
+  // setTimeout(function() {
+  //   $('.message.loading').remove();
+  //   $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  //   setDate();
+  //   updateScrollbar();
+  //   i++;
+  // }, 1000 + (Math.random() * 20) * 100);
+  $('.message.loading').remove();
+  $('<div class="message new"><figure class="avatar"><img src="./trump2.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  setDate();
+  updateScrollbar();
+  i++;
 
 }
+
