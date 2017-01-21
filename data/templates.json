@@ -2,8 +2,7 @@
 {
 	"keys": ["default"],
 	"response": ["Bing bing, bong bong, bing bing bing.", 
-		"You know, it doesn’t really matter as long as you've got a young and beautiful piece of ass.",
-    "Thanks sweetie. That’s nice"]
+		"You know, it doesn’t really matter as long as you've got a young and beautiful piece of ass."]
 },
 {
 	"keys":["women", "girls", "female", "sexual", "woman", "girl"],
@@ -104,6 +103,26 @@
 {
   "keys": ["election"],
   "response": ["I’m just thinking to myself right now, we should just cancel the election and just give it to Trump, right?"]
-}
+},
 
+{  
+	"keys": ["what do you think of"],
+	"response": ["I think it will be YYUUUUGGEEE!!"]
+},
+
+{
+	"keys": ["what did you do"],
+	"response": ["I spent the entire time combing my hair!!!"]
+},
+
+{ 
+	"keys": ["hi", "hey"],
+	"response": ["Do I know you?"]
+
+}, 
+
+{
+	"keys": ["fuck"],
+	"response": ["Thanks sweetie. That’s nice"]
+}
 ]

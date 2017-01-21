@@ -12,12 +12,10 @@ module.exports.getResponse = function(receivedMsg, callback) {
   var words = receivedMsg.toLowerCase().split(' ');
 
   for (var i in templates) {
-    for (var ii in words) {
-      for (var k_i in templates[i].keys) {
-        if (templates[i].keys[k_i] == words[ii]) {
-          callback(randomizer(templates[i].response));
-          return;
-        }
+    for (var k_i in templates[i].keys) {
+      if (receivedMsg.toLowerCase().includes(templates[i].keys[k_i])) {
+        callback(randomizer(templates[i].response));
+        return;
       }
     }
   }
@@ -29,6 +27,4 @@ function randomizer(responses) {
   var len = responses.length;
   var i = Math.round(Math.random() * (len - 1));
   return responses[i];
-
-
 }
