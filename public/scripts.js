@@ -1,4 +1,4 @@
-var socket = io(window.location.hostname + ":80");
+var socket = io();
 var INITIAL_MESSAGE = "Let's Make America Great Again!";
 
 var $messages = $('.messages-content'),
