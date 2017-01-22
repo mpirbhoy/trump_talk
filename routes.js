@@ -14,7 +14,7 @@ module.exports = function(app) {
 
 		socket.on('chat message', function (receivedMsg) {
 			console.log(receivedMsg);
-		    controller.getResponse(receivedMsg, function (replyMsg, imageName) {io.emit('trump response', { trumpMsg: replyMsg, image: imageName})});
+		    controller.getResponse(receivedMsg, function (replyMsg, imageName) {socket.emit('trump response', { trumpMsg: replyMsg, image: imageName})});
 		});
 	})
 	
