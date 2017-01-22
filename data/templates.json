@@ -134,12 +134,18 @@
 	"keys": ["who are you"],
 	"response": ["Congratulations! You are talking to Donald J. Trump!"]
 },
+{
+	"keys": ["china"],
+	"response": ["I like China. I just sold an apartment for $15 million to someone from China. Am I supposed to dislike them?"],
+	"image": ["china"]
+},
 
 { 
 	"keys": ["hi", "hey"],
 	"response": ["Do I know you?"]
 
 }, 
+
 
 {
 	"keys": ["fuck"],
